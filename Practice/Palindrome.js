@@ -12,6 +12,7 @@ function palindrome(x) {
 }
 console.log(palindrome(2222));
 console.log(palindrome(22522));
+console.log(palindrome("a man, a plan, a canal. panama"));
 
 function polindrome2(string) {
   let len = string.length;
@@ -64,6 +65,27 @@ function palindromeWithRegularExpr(str) {
 }
 console.log(palindromeWithRegularExpr("a man, a plan, a canal. panama"));
 console.log(palindromeWithRegularExpr("a race car")); //=> false
+console.log(palindromeWithRegularExpr("22522"));
+
+function polindromeWithLoop(string) {
+  let re = /[\W_]/g; //or /[^A-Za-z0-9]/g
+  string = string.toLowerCase().replace(re, "");
+  let len = string.length;
+  let mid = len / 2;
+
+  let end = len - 1;
+
+  for (let i = 0; i < mid; i++) {
+    if (string[i] !== string[end - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(polindromeWithLoop("a man, a plan, a canal. panama")); //true
+console.log(polindromeWithLoop("a race car")); //=> false
+console.log(polindromeWithLoop("22522")); //=>true
 
 /**
  *
