@@ -1,6 +1,6 @@
 //1 get the first and the last
 
-function palindrome(x) {
+function palindromeWithInteger(x) {
   let num = x.toString();
   let end = num.length - 1;
   for (let i = 0; i < end; i++) {
@@ -10,11 +10,11 @@ function palindrome(x) {
   }
   return true;
 }
-console.log(palindrome(2222));
-console.log(palindrome(22522));
-console.log(palindrome("a man, a plan, a canal. panama"));
+console.log(palindromeWithInteger(2222)); //=>true
+console.log(palindromeWithInteger(22522)); //false
+console.log(palindromeWithInteger("a man, a plan, a canal. panama")); //false
 
-function polindrome2(string) {
+function palindrome2(string) {
   let len = string.length;
   let end = string.length - 1;
   let mid = Math.floor(len / 2);
