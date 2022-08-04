@@ -14,7 +14,7 @@ console.log(palindromeWithInteger(2222)); //=>true
 console.log(palindromeWithInteger(22522)); //false
 console.log(palindromeWithInteger("a man, a plan, a canal. panama")); //false
 
-function palindrome2(string) {
+function palindromeWithString(string) {
   let len = string.length;
   let end = string.length - 1;
   let mid = Math.floor(len / 2);
@@ -26,9 +26,9 @@ function palindrome2(string) {
   return true;
 }
 
-console.log(palindrome2("racecar")); //=>true
+console.log(palindromeWithString("racecar")); //=>true
 
-console.log(palindrome2("race a car")); //=>false
+console.log(palindromeWithString("race a car")); //=>false
 
 //using regular Expression to eliminate non alphabetic characters
 function palindromeWithRegularExpr(str) {
