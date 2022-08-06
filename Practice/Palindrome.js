@@ -17,7 +17,7 @@ console.log(palindromeWithInteger("a man, a plan, a canal. panama")); //false
 function palindromeWithString(string) {
   let len = string.length;
   let end = string.length - 1;
-  let mid = Math.floor(len / 2);
+  let mid = len / 2;
   for (let i = 0; i < mid; i++) {
     if (string[i] !== string[end - i]) {
       return false;
@@ -67,6 +67,24 @@ console.log(palindromeWithRegularExpr("a man, a plan, a canal. panama"));
 console.log(palindromeWithRegularExpr("a race car")); //=> false
 console.log(palindromeWithRegularExpr("22522"));
 
+function palindromeloop(number) {
+  let num = number.toString();
+  let len = num.length;
+  let end = len - 1;
+  if (len === 0) {
+    console.log("you didn't enter any value");
+  }
+  for (let i = 0; i < len; i++) {
+    for (let j = end; j >= 0; j--) {
+      if (num[i] !== num[j]) {
+        return false;
+      } else return true;
+    }
+  }
+}
+
+console.log(palindromeloop("racecar"));
+
 function polindromeWithLoop(string) {
   let re = /[\W_]/g; //or /[^A-Za-z0-9]/g
   string = string.toLowerCase().replace(re, "");
@@ -106,7 +124,7 @@ console.log(polindromeWithLoop("22522")); //=>true
 //recursive
 const palindromeRecursive = (string) => {
   let end = string.length - 1;
-  if (string.length <= 1) {
+  if (string.length === 1) {
     return true;
   }
 
