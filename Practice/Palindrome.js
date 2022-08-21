@@ -43,7 +43,7 @@ function palindromeWithRegularExpr(str) {
 
   //remove any non alphanumeriq char using regExp
   let replaceChar = tolowercase.replace(re, "");
-  console.log(replaceChar); // => racecar
+  console.log(replaceChar); //=> racecar
 
   //now take the inverse of replechar by :
   //1 )split string into substring
@@ -56,7 +56,7 @@ function palindromeWithRegularExpr(str) {
 
   //3) and finaly join all the character together
   let joining = reverse.join("");
-  console.log(joining); // => acecar
+  console.log(joining); //=> acecar
 
   //now that we got the string (replaceChar) and
   // its reversion (joining) format that
@@ -118,7 +118,7 @@ console.log(polindromeWithLoop("22522")); //=>true
  * r & r => true
  * a & a => true
  * c & c => true
- * e & empty => flase  ==> False
+ * e & empty => false  ==> False
  */
 
 //recursive
