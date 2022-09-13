@@ -13,9 +13,16 @@ function missingElement(array) {
   console.log(sum1);
   let sum2 = 0;
   let difference;
-  for (i = 0; i < array.length; i++) {
-    sum2 += array[i];
-  }
+  //using for loop
+  //   for (i = 0; i < array.length; i++) {
+  //     sum2 += array[i];
+  //   }
+
+  //using reduce methd
+  sum2 = array.reduce((a, b) => {
+    return a + b;
+  }, 0);
+  console.log("sum2", sum2);
   difference = sum1 - sum2;
   if (difference <= 0) {
     difference = 0;
@@ -26,3 +33,12 @@ function missingElement(array) {
 }
 
 console.log(missingElement([0, 1, 2, 4])); // 3
+
+function missing(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] != i) {
+      return `the missing element is ${i}`;
+    }
+  }
+}
+console.log(missing([0, 1, 2, 3, 5])); //4
