@@ -24,9 +24,10 @@ function searchInsert(numsArray, target) {
   let rightPointer = numsArray[numsArray.length - 1];
   let mid;
   let answer = 0; // current answer
+  // console.log('left ', leftPointer)
 
   while (leftPointer <= rightPointer) {
-    mid = (leftPointer + rightPointer) / 2;
+    mid = Math.round((leftPointer + rightPointer) / 2);
 
     console.log(mid);
     if (numsArray[mid] === target) {
@@ -42,10 +43,11 @@ function searchInsert(numsArray, target) {
     }
   }
 
-  return answer;
+  return ` the posisition of the target is: ${answer}`;
 }
 
 console.log(searchInsert([1, 3, 5, 6], 7));
+
 //=>2
 //VM21105:10 3
 //VM21105:27 4
@@ -70,4 +72,4 @@ console.log(searchInsert([1, 3, 5, 6], 7));
 //ans = mid + 1 = 4
 
 //3) go back to while loop
-// is 4 <= 3 no  Exist the loop and return the answer
+// is 4 <= 3 no  Exist the loop and return the answer 4
