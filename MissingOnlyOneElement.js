@@ -13,10 +13,11 @@ function missingElement(array) {
   console.log(sum1);
   let sum2 = 0;
   let difference;
+
   //using for loop
-  //   for (i = 0; i < array.length; i++) {
-  //     sum2 += array[i];
-  //   }
+  for (i = 0; i < array.length; i++) {
+    sum2 += array[i];
+  }
 
   //using reduce methd
   sum2 = array.reduce((a, b) => {
@@ -35,9 +36,17 @@ function missingElement(array) {
 console.log(missingElement([0, 1, 2, 4])); // 3
 
 function missing(array) {
+  //1
+  //   for (let i = 0; i < array.length; i++) {
+  //     if (array[i] != i) {
+  //       return `the missing element is ${array[i]}`;
+  //     }
+  //   }
+
+  //2
   for (let i = 0; i < array.length; i++) {
-    if (array[i] != i) {
-      return `the missing element is ${i}`;
+    if (array.indexOf(i) === -1) {
+      return i;
     }
   }
 }

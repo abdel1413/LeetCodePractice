@@ -1,6 +1,6 @@
 const missingElement = (numbers) => {
   let missings = [];
-  for (let i = 0; i < numbers.length; i++) {
+  for (let i = 0; i <= numbers.length; i++) {
     if (numbers.indexOf(i) == -1) {
       missings.push(i);
     }
@@ -8,4 +8,4 @@ const missingElement = (numbers) => {
   return missings;
 };
 
-console.log(missingElement([1, 3, 4, 5, 6, 7, 9]));
+console.log(missingElement([1, 3, 4, 5, 6, 7, 9, 10]));

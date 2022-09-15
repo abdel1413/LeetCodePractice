@@ -3,8 +3,8 @@
 function palindromeWithInteger(x) {
   let num = x.toString();
   let end = num.length - 1;
-  for (let i = 0; i < end; i++) {
-    if (num[i] !== num[end]) {
+  for (let i = 0; i < num; i++) {
+    if (num[i] !== num[end - i]) {
       return false;
     }
   }
@@ -56,7 +56,7 @@ function palindromeWithRegularExpr(str) {
 
   //3) and finaly join all the character together
   let joining = reverse.join("");
-  console.log(joining); //=> acecar
+  console.log(joining); //=> racecar
 
   //now that we got the string (replaceChar) and
   // its reversion (joining) format that
@@ -89,10 +89,12 @@ function polindromeWithLoop(string) {
   let re = /[\W_]/g; //or /[^A-Za-z0-9]/g
   string = string.toLowerCase().replace(re, "");
   let len = string.length;
-  let mid = len / 2;
+  let mid = Math.round(len / 2);
 
   let end = len - 1;
-
+  //race a car
+  // i = 0 (r) and end = 7 -0 = 7 (r)  ==> true
+  // i = 1 (a)end = 7-1 = 6 (a) ==> true...
   for (let i = 0; i < mid; i++) {
     if (string[i] !== string[end - i]) {
       return false;

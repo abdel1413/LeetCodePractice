@@ -2,7 +2,9 @@
  *
  * @param {*} numsArray
  * @param {*} target
- * Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+ * Given a sorted array of distinct integers and a target value, 
+ * return the index if the target is found. If not, return
+ *  the index where it would be if it were inserted in order.
 
 You must write an algorithm with O(log n) runtime complexity.
 Example 1:
@@ -18,17 +20,19 @@ Output: 1
  */
 
 function searchInsert(numsArray, target) {
-  let leftPointer = 0; // first index of numsArray
-  let rightPointer = numsArray.length - 1; // last index of numsArray
+  let leftPointer = numsArray[0]; // first index of numsArray
+  let rightPointer = numsArray[numsArray.length - 1];
   let mid;
   let answer = 0; // current answer
 
   while (leftPointer <= rightPointer) {
-    mid = Math.round(leftPointer + rightPointer) / 2;
+    mid = (leftPointer + rightPointer) / 2;
+
+    console.log(mid);
     if (numsArray[mid] === target) {
       return mid;
     }
-    if (numsArray[mis] < target) {
+    if (numsArray[mid] < target) {
       //move left pointer to one step forward
       leftPointer = mid + 1;
       answer = mid + 1;
