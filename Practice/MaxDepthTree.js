@@ -9,11 +9,27 @@
  *
  */
 
-function TreeNode(val, left, right) {
-  this.val = val === undefined ? 0 : val;
-  this.left = left === undefined ? null : left;
-  this.right = right === undefined ? null : right;
+//algo
+// 1) null => depth = 0
+// 2) root => depth = 1
+//3) root has left and right children and here right child has itself  children
+// so we going to appply divide and conquer methodology.
+// a) root has depth of 1
+// b) take the depth of the left node
+// c) take the  depth of the right node
+// d) add 1 + max ( a, b)
+function TreeNode(root) {
+  if (root === null) {
+    return 0;
+  }
 }
+
+// function TreeNode(val, left, right) {
+//   this.val = val === undefined ? 0 : val;
+//   this.left = left === undefined ? null : left;
+//   this.right = right === undefined ? null : right;
+
+// }
 function maxDepth(root) {
   if (root === null) {
     return 0;

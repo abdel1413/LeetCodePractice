@@ -27,9 +27,8 @@ function searchInsert(numsArray, target) {
   // console.log('left ', leftPointer)
 
   while (leftPointer <= rightPointer) {
-    mid = Math.round((leftPointer + rightPointer) / 2);
+    mid = Math.round((leftPointer + rightPointer) / 2); //get the mid index
 
-    console.log(mid);
     if (numsArray[mid] === target) {
       return mid;
     }
@@ -38,7 +37,7 @@ function searchInsert(numsArray, target) {
       leftPointer = mid + 1;
       answer = mid + 1;
     } else {
-      rightPointer = mid - 1;
+      rightPointer = mid - 1; //move right pointer one step backward
       answer = mid - 1;
     }
   }

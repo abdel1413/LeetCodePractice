@@ -41,7 +41,7 @@ function palindromeWithRegularExpr(str) {
   let tolowercase = str.toLowerCase();
   console.log(tolowercase); //=> race car
 
-  //remove any non alphanumeriq char using regExp
+  //remove any non alphanumeriq char  in the lowercase biding
   let replaceChar = tolowercase.replace(re, "");
   console.log(replaceChar); //=> racecar
 
