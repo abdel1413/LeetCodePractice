@@ -14,7 +14,7 @@ Output: [3,9,20,null,null,15,7]
 Output: [-1]
  */
 
-// Preorder => Root, then Left then Right [3,9,20,15,7]
+// Preorder => Root, then Left then Right [93,,20,15,7]
 // Inorder => Left, then Root, then Right [9,3,15,20,7]
 
 // 1) get the first element in Preoder which constitutes the root
@@ -26,8 +26,8 @@ Output: [-1]
 // [9,3,15,20,7] => [9],[15,20,7]
 //4)build subtrees  on the root  using recursive function
 //a) left root : recursive call of preorder from 2nd elt to the  root  index
-//exclusively and inorder from 0 to rootIndex exclusively
-//b) right root: recursive call preorder from rootIndex to the end and inorder
+// +1 and inorder from 0 to rootIndex
+//b) right root: recursive call preorder from rootIndex to the endf and inorder
 // from rootindex to the end
 // 5) return the root
 
