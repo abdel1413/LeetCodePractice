@@ -55,3 +55,6 @@ buildTree(inorder, postorder);
 
 // Input: inorder = [-1], postorder = [-1]
 // Output: [-1]
+
+//runtime complexity = O(n)
+//space time comp = O(n)

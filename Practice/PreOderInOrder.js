@@ -34,6 +34,10 @@ Output: [-1]
 var buildTree = function (preorder, inorder) {
   let root = new TreeNode(preorder[0]);
   let rootIndex = inorder.indexOf(root.val);
+
+  //if (!preorder.length || !inorder.length) {
+  // return null;
+  //} or
   if (preorder.length === 0) {
     return null;
   } else if (inorder.length === 0) {
@@ -50,22 +54,3 @@ var buildTree = function (preorder, inorder) {
   }
   return root;
 };
-
-///
-
-let root = new TreeNode(preorder[0]);
-let rootIndex = inorder.indexOf(root.val);
-if (!preorder.length || !inorder.length) {
-  return null;
-}
-
-root.left = buildTree(
-  preorder.slice(1, rootIndex + 1),
-  inorder.slice(0, rootIndex)
-);
-root.right = buildTree(
-  preorder.slice(rootIndex + 1),
-  inorder.slice(rootIndex + 1)
-);
-
-return root;
